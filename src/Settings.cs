@@ -19,15 +19,15 @@ namespace ChooseStartingLocation
         [Section("Starting Region")]
         [Name("Choose Starting Region")]
         [Description("This will OVERRIDE the region choice you make when starting a new game")]
-        [Choice("Ash Canyon", "Blackrock", "Blackrock Prison", "Bleak Inlet", "Broken Railroad", "Coastal Highway", "Crumbling Highway", "Desolation Point", "Forlorn Muskeg", "Hushed River Valley", "Keeper's Pass North", 
-            "Keeper's Pass South", "Mountain Town", "Mystery Lake", "Pleasant Valley", "Ravine", "Timberwolf Mountain", "Winding River", "Random")]
+        [Choice("Ash Canyon", "Blackrock", /*"Blackrock Prison",*/ "Bleak Inlet", "Broken Railroad", "Coastal Highway", "Crumbling Highway", "Desolation Point", "Forlorn Muskeg", "Forsaken Airfield", "Hushed River Valley", "Keeper's Pass North", 
+            "Keeper's Pass South", "Mountain Town", "Mystery Lake", "Pleasant Valley", "Ravine", "Sundered Pass", "Timberwolf Mountain", "Transfer Pass", "Winding River", "Zone of Contamination", "Random")]
         public Region region = Region.AshCanyonRegion;
 
         [Section("Starting Region")]
         [Name("Choose Starting Region")]
         [Description("This will OVERRIDE the region choice you make when starting a new game")]
-        [Choice("Ash Canyon", "Blackrock", "Blackrock Prison", "Bleak Inlet", "Broken Railroad", "Coastal Highway", "Crumbling Highway", "Desolation Point", "Forlorn Muskeg", "Hushed River Valley", "Keeper's Pass North", 
-            "Keeper's Pass South", "Mountain Town", "Mystery Lake", "Pleasant Valley", "Ravine", "Timberwolf Mountain", "Winding River")]
+        [Choice("Ash Canyon", "Blackrock", /*"Blackrock Prison",*/ "Bleak Inlet", "Broken Railroad", "Coastal Highway", "Crumbling Highway", "Desolation Point", "Forlorn Muskeg", "Forsaken Airfield", "Hushed River Valley", "Keeper's Pass North", 
+            "Keeper's Pass South", "Mountain Town", "Mystery Lake", "Pleasant Valley", "Ravine", "Sundered Pass", "Timberwolf Mountain", "Transfer Pass", "Winding River", "Zone of Contamination")]
         public CustomRegion customRegion = CustomRegion.AshCanyonRegion;
 
         [Section("Starting Location")]
@@ -44,10 +44,10 @@ namespace ChooseStartingLocation
             "Wedge Cave", "Whistling Perch", "Random")]
         public BlackrockLocation blackrockLocation = BlackrockLocation.BearsBend;
 
-        [Section("Starting Location")]
+        /*[Section("Starting Location")]
         [Name("Choose Starting Location")]
         [Choice("Cells", "Gatehouse", "Guard Room", "Hiding Spot", "Infirmary", "Maintenance Shed", "Rooftop", "Staff Quarters", "Steam Tunnels", "Warden's Office", "Watchtower", "Random")]
-        public BlackrockPrisonLocation blackrockPrisonLocation = BlackrockPrisonLocation.Cells;
+        public BlackrockPrisonLocation blackrockPrisonLocation = BlackrockPrisonLocation.Cells;*/
 
         [Section("Starting Location")]
         [Name("Choose Starting Location")]
@@ -83,6 +83,11 @@ namespace ChooseStartingLocation
         [Name("Choose Starting Location")]
         [Choice("Bunkhouses", "Cave", "Cave to Bleak Inlet", "Hat Creek", "High Blind", "Low Blind", "Marsh Ridge", "Muskeg Overlook", "Old Spence Family Homestead", "Poacher's Camp", "Shortwave Tower", "Waterfall", "Random")]
         public ForlornMuskegLocation forlornMuskegLocation = ForlornMuskegLocation.Bunkhouses;
+
+        [Section("Starting Location")]
+        [Name("Choose Starting Location")]
+        [Choice("Control Tower", "Island Cottage", "Justy's Hovel", "Mindful Cabin", "Random")]
+        public ForsakenAirfieldLocation forsakenAirfieldLocation = ForsakenAirfieldLocation.ControlTower;
 
         [Section("Starting Location")]
         [Name("Choose Starting Location")]
@@ -130,14 +135,29 @@ namespace ChooseStartingLocation
 
         [Section("Starting Location")]
         [Name("Choose Starting Location")]
+        [Choice("Final Refuge", "Last Lonely House", "Lotte's Rest", "Weather Station", "Random")]
+        public SunderedPassLocation sunderedPassLocation = SunderedPassLocation.FinalRefuge;
+
+        [Section("Starting Location")]
+        [Name("Choose Starting Location")]
         [Choice("Andre's Peak", "Cave (Large Open)", "Cave (Lower)", "Cave (Upper)", "Cave (Unnamed)", "Cave to Ash Canyon", "Chasm Cave", "Crystal Lake", "Deer Clearing", "Echo Peak East", "Echo Peak West", "Echo Ravine", 
             "Engine", "Eric's Falls", "Forest Cave", "Landing Gear", "Mountaineer's Hut", "Secluded Shelf", "Summit", "Summit Cave", "Tail Section", "Waterfall Cave", "Wing", "Random")]
         public TimberwolfMountainLocation timberwolfMountainLocation = TimberwolfMountainLocation.AndresPeak;
 
         [Section("Starting Location")]
         [Name("Choose Starting Location")]
+        [Choice("Vacant Depot", "Random")]
+        public TransferPassLocation transferPassLocation = TransferPassLocation.VacantDepot;
+
+        [Section("Starting Location")]
+        [Name("Choose Starting Location")]
         [Choice("Cave", "Cave to Pleasant Valley", "Dam", "Hilltop", "Sheltered Spot", "Random")]
         public WindingRiverLocation windingRiverLocation = WindingRiverLocation.Cave;
+
+        [Section("Starting Location")]
+        [Name("Choose Starting Location")]
+        [Choice("Idle Camp", "Mine", "Trailer", "Random")]
+        public ZoneOfContaminationLocation zoneOfContminationLocation = ZoneOfContaminationLocation.IdleCamp;
 
 
         [Section("Custom Coordinates")]
@@ -179,13 +199,17 @@ namespace ChooseStartingLocation
                 field.Name == nameof(crumblingHighwayLocation) ||
                 field.Name == nameof(desolationPointLocation) ||
                 field.Name == nameof(forlornMuskegLocation) ||
+                field.Name == nameof(forsakenAirfieldLocation) ||
                 field.Name == nameof(hushedRiverValleyLocation) ||
                 field.Name == nameof(mountainTownLocation) ||
                 field.Name == nameof(mysteryLakeLocation) ||
                 field.Name == nameof(pleasantValleyLocation) ||
                 field.Name == nameof(ravineLocation) ||
+                field.Name == nameof(sunderedPassLocation) ||
                 field.Name == nameof(timberwolfMountainLocation) ||
-                field.Name == nameof(windingRiverLocation))
+                field.Name == nameof(transferPassLocation) ||
+                field.Name == nameof(windingRiverLocation) ||
+                field.Name == nameof(zoneOfContminationLocation))
             {
                 RefreshFields();
             }
@@ -198,13 +222,14 @@ namespace ChooseStartingLocation
 
             SetFieldVisible(nameof(ashCanyonLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.AshCanyonRegion);
             SetFieldVisible(nameof(blackrockLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.BlackrockRegion);
-            SetFieldVisible(nameof(blackrockPrisonLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.BlackrockPrisonSurvivalZone);
+            //SetFieldVisible(nameof(blackrockPrisonLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.BlackrockPrisonSurvivalZone);
             SetFieldVisible(nameof(bleakInletLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.CanneryRegion);
             SetFieldVisible(nameof(brokenRailroadLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.TracksRegion);
             SetFieldVisible(nameof(coastalHighwayLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.CoastalRegion);
             SetFieldVisible(nameof(crumblingHighwayLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.HighwayTransitionZone);
             SetFieldVisible(nameof(desolationPointLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.WhalingStationRegion);
             SetFieldVisible(nameof(forlornMuskegLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.MarshRegion);
+            SetFieldVisible(nameof(forsakenAirfieldLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.AirfieldRegion);
             SetFieldVisible(nameof(hushedRiverValleyLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.RiverValleyRegion);
             SetFieldVisible(nameof(keepersPassNorthLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.BlackrockTransitionZone);
             SetFieldVisible(nameof(keepersPassSouthLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.CanyonRoadTransitionZone);
@@ -212,8 +237,11 @@ namespace ChooseStartingLocation
             SetFieldVisible(nameof(mysteryLakeLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.LakeRegion);
             SetFieldVisible(nameof(pleasantValleyLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.RuralRegion);
             SetFieldVisible(nameof(ravineLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.RavineTransitionZone);
+            SetFieldVisible(nameof(sunderedPassLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.MountainPassRegion);
             SetFieldVisible(nameof(timberwolfMountainLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.CrashMountainRegion);
+            SetFieldVisible(nameof(transferPassLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.HubRegion);
             SetFieldVisible(nameof(windingRiverLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.DamRiverTransitionZoneB);
+            SetFieldVisible(nameof(zoneOfContminationLocation), Settings.settings.modFunction == ModFunction.LocationList && Settings.settings.region == Region.MiningRegion);
 
             SetFieldVisible(nameof(x), Settings.settings.modFunction == ModFunction.CustomCoords);
             SetFieldVisible(nameof(y), Settings.settings.modFunction == ModFunction.CustomCoords);

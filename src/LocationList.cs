@@ -1,42 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MelonLoader;
-using UnityEngine;
+﻿using MelonLoader;
 
 namespace ChooseStartingLocation
 {
     public enum Region
     {
-        AshCanyonRegion, BlackrockRegion, BlackrockPrisonSurvivalZone, CanneryRegion, TracksRegion, CoastalRegion, HighwayTransitionZone, WhalingStationRegion, MarshRegion, RiverValleyRegion, BlackrockTransitionZone,
-        CanyonRoadTransitionZone, MountainTownRegion, LakeRegion, RuralRegion, RavineTransitionZone, CrashMountainRegion, DamRiverTransitionZoneB, Random
+        AshCanyonRegion, BlackrockRegion, /*BlackrockPrisonSurvivalZone,*/ CanneryRegion, TracksRegion, CoastalRegion, HighwayTransitionZone, WhalingStationRegion, MarshRegion, AirfieldRegion, RiverValleyRegion, BlackrockTransitionZone,
+        CanyonRoadTransitionZone, MountainTownRegion, LakeRegion, RuralRegion, RavineTransitionZone, MountainPassRegion, CrashMountainRegion, HubRegion, DamRiverTransitionZoneB, MiningRegion, Random,
     }
     public enum CustomRegion
     {
-        AshCanyonRegion, BlackrockRegion, BlackrockPrisonSurvivalZone, CanneryRegion, TracksRegion, CoastalRegion, HighwayTransitionZone, WhalingStationRegion, MarshRegion, RiverValleyRegion, BlackrockTransitionZone,
-        CanyonRoadTransitionZone, MountainTownRegion, LakeRegion, RuralRegion, RavineTransitionZone, CrashMountainRegion, DamRiverTransitionZoneB
+        AshCanyonRegion, BlackrockRegion, /*BlackrockPrisonSurvivalZone,*/ CanneryRegion, TracksRegion, CoastalRegion, HighwayTransitionZone, WhalingStationRegion, MarshRegion, AirfieldRegion, RiverValleyRegion, BlackrockTransitionZone,
+        CanyonRoadTransitionZone, MountainTownRegion, LakeRegion, RuralRegion, RavineTransitionZone, MountainPassRegion, CrashMountainRegion, HubRegion, DamRiverTransitionZoneB, MiningRegion
     }
     public enum AshCanyonLocation
     {
-        AnglersDen, BitterMarsh, BroadFalls, Cave, CaveTWM, ClimbersCave, FireOverlook, ForemansRetreat, GoldMine, HighCamp, HighMeadow, HomesteadersRespite, LongFalls, MinersFolly, MiningCamp, NarrowFallsCave, PillarsFootrest, 
+        AnglersDen, BitterMarsh, BroadFalls, Cave, CaveTWM, ClimbersCave, FireOverlook, ForemansRetreat, GoldMine, HighCamp, HighMeadow, HomesteadersRespite, LongFalls, MinersFolly, MiningCamp, NarrowFallsCave, PillarsFootrest,
         RunawayBridge, SecludedCamp, ShatteredCove, ShelteredCamp, StoneShelfCave, ViewpointCamp, WolfsJawOverlook, Random
     }
     public enum BlackrockLocation
     {
-        BearsBend, BlockedBridge, BricklayersRetreat, CliffCave, CooksFarm, CreekBedCave, CuttysCave, FoolsCorner, ForagersRemnant, ForemansClearcut, GrandMeadow, JailersResidence, LastProspect, LineworkersHideout, 
+        BearsBend, BlockedBridge, BricklayersRetreat, CliffCave, CooksFarm, CreekBedCave, CuttysCave, FoolsCorner, ForagersRemnant, ForemansClearcut, GrandMeadow, JailersResidence, LastProspect, LineworkersHideout,
         MuleBridgeLower, MuleBridgeUpper, NarrowBridge, NoRoadCave, OldSubstation, PowerPlant, SteamTunnels, Trailer, WedgeCave, WhistlingPerch, Random
     }
-    public enum BlackrockPrisonLocation
+    /*public enum BlackrockPrisonLocation
     {
         Cells, Gatehouse, GuardRoom, HidingSpot, Infirmary, MaintenanceShed, Rooftop, StaffQuarters, SteamTunnels, WardensOffice, Watchtower, Random
-    }
+    }*/
 
     public enum BleakInletLocation
     {
-        Cabin, CanneryPier, CanneryWorkerResidences, CanneryWorkshop, CaveCentral, CaveNorthEast, CaveSouthEast, CaveSouthWest, CaveWest, CaveFM, CoastalHighwayTerminus, CoastMountainRoad, EchoOneRadioTower, 
-        FallenLighthouse, FrozenDelta, HuntersBlindEast, HuntersBlindNorth, HuntersBlindWest, Landslide, LastResortCannery, LongBridge, LowerRavenFalls, PensiveLookout, RavenCrossing, RavinesEndWaterfall, SecretMountainPath, 
+        Cabin, CanneryPier, CanneryWorkerResidences, CanneryWorkshop, CaveCentral, CaveNorthEast, CaveSouthEast, CaveSouthWest, CaveWest, CaveFM, CoastalHighwayTerminus, CoastMountainRoad, EchoOneRadioTower,
+        FallenLighthouse, FrozenDelta, HuntersBlindEast, HuntersBlindNorth, HuntersBlindWest, Landslide, LastResortCannery, LongBridge, LowerRavenFalls, PensiveLookout, RavenCrossing, RavinesEndWaterfall, SecretMountainPath,
         SummitAtRavinesEnd, Trailer, Trailers, WashedOutTrailers, Random
     }
     public enum BrokenRailroadLocation
@@ -45,7 +39,7 @@ namespace ChooseStartingLocation
     }
     public enum CoastalHighwayLocation
     {
-        AbandonedLookout, BearCreekCampground, CinderHillsCoalMineLower, CinderHillsCoalMineMiddle, CinderHillsCoalMineUpper, CoastalTownsite, CommutersLament, FishingCamp, JackrabbitIsland, LogSort, MisanthropesHomestead, 
+        AbandonedLookout, BearCreekCampground, CinderHillsCoalMineLower, CinderHillsCoalMineMiddle, CinderHillsCoalMineUpper, CoastalTownsite, CommutersLament, FishingCamp, JackrabbitIsland, LogSort, MisanthropesHomestead,
         QuonsetGarage, RabbitGrove, Rockfall, SilentClearing, TheTooth, TrainUnloading, WaterfrontCottages, Random
     }
     public enum CrumblingHighwayLocation
@@ -60,9 +54,13 @@ namespace ChooseStartingLocation
     {
         Bunkhouses, Cave, CaveBI, HatCreek, HighBlind, LowBlind, MarshRidge, MuskegOverlook, OldSpenceFamilyHomestead, PoachersCamp, ShortwaveTower, Waterfall, Random
     }
+    public enum ForsakenAirfieldLocation
+    {
+        ControlTower, IslandCottage, JustysHovel, MindfulCabin, Random
+    }
     public enum HushedRiverValleyLocation
     {
-        BannerFalls, CaveMT, CloudtopFalls, ForestKnoll, IceCaveNorth, IceCaveSouth, LakeCave, Landslide, LittleBearandCubFalls, LonelyCave, LongShotFalls, MammothFalls, ManyFallsVista, MonolithLake, MooseOverlook, MysteriousSignalFire, 
+        BannerFalls, CaveMT, CloudtopFalls, ForestKnoll, IceCaveNorth, IceCaveSouth, LakeCave, Landslide, LittleBearandCubFalls, LonelyCave, LongShotFalls, MammothFalls, ManyFallsVista, MonolithLake, MooseOverlook, MysteriousSignalFire,
         OffsetFalls, PeakCave, PensiveVista, QuarrellingFalls, ReclusiveFalls, RiversideCamp, SecludedCamp, StairstepsLake, TwinSistersFalls, ValleyCave, ValleyViewPoint, VistaCamp, WatchfulFalls, Random
     }
     public enum KeepersPassNorthLocation
@@ -75,34 +73,46 @@ namespace ChooseStartingLocation
     }
     public enum MountainTownLocation
     {
-        CaveClimbingArea, CaveDeep, CaveRadioTower, CaveHRV, CaveML, CrashedPlane, CrashedPrisonTransportBus, Graveyard, GreyMothersHouse, HermitsCabin, MiltonBasin, MiltonCreditUnion, MiltonHouse, MiltonPark, MiltonPostOffice, 
-        OldSchoolhouse, OrcaGasStation, ParadiseMeadowsFarm, ParkOffice, PicnicArea, RadioTower, RockyRefuge, SideOfTheRoad, SpruceFallsBridge,StChristophersChurch, TheArch, TownOfMilton, Trailer, WoodLotNorth, WoodLotSouthEast,
+        CaveClimbingArea, CaveDeep, CaveRadioTower, CaveHRV, CaveML, CrashedPlane, CrashedPrisonTransportBus, Graveyard, GreyMothersHouse, HermitsCabin, MiltonBasin, MiltonCreditUnion, MiltonHouse, MiltonPark, MiltonPostOffice,
+        OldSchoolhouse, OrcaGasStation, ParadiseMeadowsFarm, ParkOffice, PicnicArea, RadioTower, RockyRefuge, SideOfTheRoad, SpruceFallsBridge, StChristophersChurch, TheArch, TownOfMilton, Trailer, WoodLotNorth, WoodLotSouthEast,
         WoodLotSouthWest, Random
     }
     public enum MysteryLakeLocation
     {
-        AlansCave, CampOffice, CarterHydroDam, CaveMT, CaveUnnamed, Clearcut, DavesQuietClearing, DeadfallArea, Derailment, DestroyedLookout, ForestryLookout, FrozenCreek, HuntersBlindatAlansCave, IceFishingHuts, LakeCabin, 
-        LakeCabinsSE, LakeCabinsSW, LakeOverlook, LoggingCamp, Lookout, MaxsLastStand, RailTunnel, RiverNorthernAccess, RiverSouthernAccess, MysteryLake, MysteryLakeWesternAccess, TrainBridge, TrainLoadingArea, TrappersCabin, 
+        AlansCave, CampOffice, CarterHydroDam, CaveMT, CaveUnnamed, Clearcut, DavesQuietClearing, DeadfallArea, Derailment, DestroyedLookout, ForestryLookout, FrozenCreek, HuntersBlindatAlansCave, IceFishingHuts, LakeCabin,
+        LakeCabinsSE, LakeCabinsSW, LakeOverlook, LoggingCamp, Lookout, MaxsLastStand, RailTunnel, RiverNorthernAccess, RiverSouthernAccess, MysteryLake, MysteryLakeWesternAccess, TrainBridge, TrainLoadingArea, TrappersCabin,
         UnnamedPond, Random
     }
     public enum PleasantValleyLocation
     {
-        BarnLarge, BarnSmall, BurnedRidgeCave, CascadingFalls, Cave, CaveWR, Church, CinderHillsCoalMine, CommunityHall, ContemplationBridge, CrashSite, DerelictCabins, DraftDodgersCabin, EndoftheRoad, ForestCave, HeartbreakBridge, 
-        HilltopCave, HuntersBlindEast, HuntersBlindWest, LonelyHomestead, LongCurve, LowerFalls, MistyFallsPicnicArea, PensivePond, PicnicSpot, PleasantValleyFarmstead, PleasantValleyOutbuildings, PointofDisagreement, 
+        BarnLarge, BarnSmall, BurnedRidgeCave, CascadingFalls, Cave, CaveWR, Church, CinderHillsCoalMine, CommunityHall, ContemplationBridge, CrashSite, DerelictCabins, DraftDodgersCabin, EndoftheRoad, ForestCave, HeartbreakBridge,
+        HilltopCave, HuntersBlindEast, HuntersBlindWest, LonelyHomestead, LongCurve, LowerFalls, MistyFallsPicnicArea, PensivePond, PicnicSpot, PleasantValleyFarmstead, PleasantValleyOutbuildings, PointofDisagreement,
         PreppersAbandonedCache, RadioControlHut, SignalHill, SkeetersRidge, ThomsonsCrossing, ThreeStrikesFarmstead, UpperFalls, Random
     }
     public enum RavineLocation
     {
         CaveLower, CaveUpper, RavenFallsTrestle, RavineBasin, ShuntingYard, TrainCar, Random
     }
+    public enum SunderedPassLocation
+    {
+        FinalRefuge, LastLonelyHouse, LottesRest, WeatherStation, Random
+    }
     public enum TimberwolfMountainLocation
     {
-        AndresPeak, CaveLargeOpen, CaveLower, CaveUpper, CaveUnnamed, CaveAC, ChasmCave, CrystalLake, DeerClearing, EchoPeakEast, EchoPeakWest, EchoRavine, Engine, EricsFalls, ForestCave, LandingGear, MountaineersHut, 
+        AndresPeak, CaveLargeOpen, CaveLower, CaveUpper, CaveUnnamed, CaveAC, ChasmCave, CrystalLake, DeerClearing, EchoPeakEast, EchoPeakWest, EchoRavine, Engine, EricsFalls, ForestCave, LandingGear, MountaineersHut,
         SecludedShelf, Summit, SummitCave, TailSection, WaterfallCave, Wing, Random
+    }
+    public enum TransferPassLocation
+    {
+        VacantDepot, Random
     }
     public enum WindingRiverLocation
     {
         Cave, CavePV, Dam, Hilltop, ShelteredSpot, Random
+    }
+    public enum ZoneOfContaminationLocation
+    {
+        IdleCamp, Mine, Trailer, Random
     }
 
     class LocationList
@@ -115,8 +125,8 @@ namespace ChooseStartingLocation
                     return GetAshCanyonLocation(Settings.settings.ashCanyonLocation);
                 case Region.BlackrockRegion:
                     return GetBlackrockLocation(Settings.settings.blackrockLocation);
-                case Region.BlackrockPrisonSurvivalZone:
-                    return GetBlackrockPrisonLocation(Settings.settings.blackrockPrisonLocation);
+                /*case Region.BlackrockPrisonSurvivalZone:
+                    return GetBlackrockPrisonLocation(Settings.settings.blackrockPrisonLocation);*/
                 case Region.CanneryRegion:
                     return GetBleakInletLocation(Settings.settings.bleakInletLocation);
                 case Region.TracksRegion:
@@ -129,6 +139,8 @@ namespace ChooseStartingLocation
                     return GetDesolationPointLocation(Settings.settings.desolationPointLocation);
                 case Region.MarshRegion:
                     return GetForlornMuskegLocation(Settings.settings.forlornMuskegLocation);
+                case Region.AirfieldRegion:
+                    return GetForsakenAirFieldLocation(Settings.settings.forsakenAirfieldLocation);
                 case Region.RiverValleyRegion:
                     return GetHushedRiverValleyLocation(Settings.settings.hushedRiverValleyLocation);
                 case Region.BlackrockTransitionZone:
@@ -143,10 +155,16 @@ namespace ChooseStartingLocation
                     return GetPleasantValleyLocation(Settings.settings.pleasantValleyLocation);
                 case Region.RavineTransitionZone:
                     return GetRavineLocation(Settings.settings.ravineLocation);
+                case Region.MountainPassRegion:
+                    return GetSunderedPassLocation(Settings.settings.sunderedPassLocation);
                 case Region.CrashMountainRegion:
                     return GetTimberwolfMountainLocation(Settings.settings.timberwolfMountainLocation);
+                case Region.HubRegion:
+                    return GetTransferPassLocation(Settings.settings.transferPassLocation);
                 case Region.DamRiverTransitionZoneB:
                     return GetWindingRiverLocation(Settings.settings.windingRiverLocation);
+                case Region.MiningRegion:
+                    return GetZoneOfContaminationLocation(Settings.settings.zoneOfContminationLocation);
                 case Region.Random:
                     return GetLocation(RandomRegion());
                 default:
@@ -233,7 +251,7 @@ namespace ChooseStartingLocation
         {
             switch (location)
             {
-               case BlackrockLocation.BearsBend:
+                case BlackrockLocation.BearsBend:
                     return new Location("Bears Bend", Region.BlackrockRegion, -922.4f, 77.1f, -149.1f, 328.5f, -10.4f);
                 case BlackrockLocation.BlockedBridge:
                     return new Location("Blocked Bridge", Region.BlackrockRegion, -308.8f, 159.9f, -812.7f, 7.7f, -2.6f);
@@ -291,7 +309,7 @@ namespace ChooseStartingLocation
             }
         }
 
-        public static Location GetBlackrockPrisonLocation(BlackrockPrisonLocation location)
+        /*public static Location GetBlackrockPrisonLocation(BlackrockPrisonLocation location)
         {
             switch (location)
             {
@@ -304,7 +322,7 @@ namespace ChooseStartingLocation
                 case BlackrockPrisonLocation.HidingSpot:
                     return new Location("Hiding Spot", "BlackrockInteriorASurvival", Region.BlackrockPrisonSurvivalZone, true, true, -8.9f, 1.8f, -24.4f, 297.8f, 46.3f);
                 case BlackrockPrisonLocation.Infirmary:
-                    return new Location("Infirmary", "BlackrockPrisonSurvivalZone", Region.BlackrockPrisonSurvivalZone, false, true, - 147.9f, 230.7f, 81.8f, 335.1f, 16.2f);
+                    return new Location("Infirmary", "BlackrockPrisonSurvivalZone", Region.BlackrockPrisonSurvivalZone, false, true, -147.9f, 230.7f, 81.8f, 335.1f, 16.2f);
                 case BlackrockPrisonLocation.MaintenanceShed:
                     return new Location("Maintenance Shed", "BlackrockPrisonSurvivalZone", Region.BlackrockPrisonSurvivalZone, false, true, -81.2f, 227.6f, 41.6f, 154.4f, 15.4f);
                 case BlackrockPrisonLocation.Rooftop:
@@ -325,7 +343,7 @@ namespace ChooseStartingLocation
                     MelonLogger.Msg("ERROR: GetBlackrockPrisonLocation switch fell through! Returning DEFAULT location (Cells)");
                     return GetBlackrockPrisonLocation(BlackrockPrisonLocation.Cells);
             }
-        }
+        }*/
 
         public static Location GetBleakInletLocation(BleakInletLocation location)
         {
@@ -341,7 +359,7 @@ namespace ChooseStartingLocation
                     return new Location("Cannery Workshop", "MaintenanceShedB", Region.CanneryRegion, true, false);
                 case BleakInletLocation.CaveCentral:
                     return new Location("Cave (Central)", Region.CanneryRegion, -57.0f, 56.4f, 267.1f, 148.1f, 16.9f);
-                case BleakInletLocation.CaveNorthEast: 
+                case BleakInletLocation.CaveNorthEast:
                     return new Location("Cave (North East)", Region.CanneryRegion, 527.4f, 276.6f, 760.8f, 225.2f, 9.8f);
                 case BleakInletLocation.CaveSouthEast:
                     return new Location("Cave (South East)", Region.CanneryRegion, 510.3f, 40.5f, -521.0f, 274.1f, 6.4f);
@@ -585,6 +603,28 @@ namespace ChooseStartingLocation
             }
         }
 
+        public static Location GetForsakenAirFieldLocation(ForsakenAirfieldLocation location)
+        {
+            switch (location)
+            {
+                case ForsakenAirfieldLocation.ControlTower:
+                    return new Location("Control Tower", Region.AirfieldRegion, 91.0f, 162.3f, -449.8f, 147.6f, 4.3f);
+                case ForsakenAirfieldLocation.IslandCottage:
+                    return new Location("Island Cottage", Region.AirfieldRegion, 325.6f, 210.5f, 1016.8f, 201.9f, 16.8f);
+                case ForsakenAirfieldLocation.JustysHovel:
+                    return new Location("Justy's Hovel", Region.AirfieldRegion, 1013.7f, 289.8f, -944.0f, 223.8f, 1.8f);
+                case ForsakenAirfieldLocation.MindfulCabin:
+                    return new Location("Mindful Cabin", Region.AirfieldRegion, -738.6f, 296.6f, 1138.7f, 157.2f, 0.1f);
+                case ForsakenAirfieldLocation.Random:
+                    Location randomLocation = GetForsakenAirFieldLocation((ForsakenAirfieldLocation)UnityEngine.Random.Range(0, Enum.GetNames(typeof(ForsakenAirfieldLocation)).Length - 1));
+                    MelonLogger.Msg("GetLocation for " + randomLocation.region.ToString() + " returned " + randomLocation.name + " as Random Location");
+                    return randomLocation;
+                default:
+                    MelonLogger.Msg("ERROR: GetAirFieldLocation switch fell through! Returning DEFAULT location (Control Tower)");
+                    return GetForsakenAirFieldLocation(ForsakenAirfieldLocation.MindfulCabin);
+            }
+        }
+
         public static Location GetHushedRiverValleyLocation(HushedRiverValleyLocation location)
         {
             switch (location)
@@ -790,7 +830,7 @@ namespace ChooseStartingLocation
                 case MysteryLakeLocation.CaveMT:
                     return new Location("Cave to Mountain Town", "MountainTownCaveB", Region.LakeRegion, true, true, -20.1f, 15.1f, 38.9f, 358.6f, 16.1f);
                 case MysteryLakeLocation.CaveUnnamed:
-                    return new Location("Cave (Unnamed)", Region.LakeRegion, 947.1f, 45.6f, -238.3f, 22.9f, 1-5.9f);
+                    return new Location("Cave (Unnamed)", Region.LakeRegion, 947.1f, 45.6f, -238.3f, 22.9f, 1 - 5.9f);
                 case MysteryLakeLocation.Clearcut:
                     return new Location("Clearcut", Region.LakeRegion, 329.5f, 19.1f, 1260.6f, 188.6f, -5.0f);
                 case MysteryLakeLocation.DavesQuietClearing:
@@ -798,7 +838,7 @@ namespace ChooseStartingLocation
                 case MysteryLakeLocation.DeadfallArea:
                     return new Location("Deadfall Area", Region.LakeRegion, 567.7f, 0.2f, 264.8f, 278.3f, 22.1f);
                 case MysteryLakeLocation.Derailment:
-                    return new Location("Derailment", Region.LakeRegion,970.2f, 40.7f, 8561.4f, 358.4f, 18.8f);
+                    return new Location("Derailment", Region.LakeRegion, 970.2f, 40.7f, 8561.4f, 358.4f, 18.8f);
                 case MysteryLakeLocation.DestroyedLookout:
                     return new Location("Destroyed Lookout", Region.LakeRegion, 441.1f, 157.8f, 1009.7f, 124.7f, -24.3f);
                 case MysteryLakeLocation.ForestryLookout:
@@ -904,7 +944,7 @@ namespace ChooseStartingLocation
                 case PleasantValleyLocation.PensivePond:
                     return new Location("Pensive Pond", Region.RuralRegion, 2507.1f, 113.0f, 1209.7f, 238.0f, 2.0f);
                 case PleasantValleyLocation.PicnicSpot:
-                    return new Location("Picnic Spot", Region.RuralRegion, 2621.8f,96.0f, 1469.7f, 224.2f, 6.5f);
+                    return new Location("Picnic Spot", Region.RuralRegion, 2621.8f, 96.0f, 1469.7f, 224.2f, 6.5f);
                 case PleasantValleyLocation.PleasantValleyFarmstead:
                     return new Location("Pleasant Valley Farmstead", "FarmHouseA", Region.RuralRegion, true, false);
                 case PleasantValleyLocation.PleasantValleyOutbuildings:
@@ -958,6 +998,28 @@ namespace ChooseStartingLocation
                 default:
                     MelonLogger.Msg("ERROR: GetMysteryLakeLocation switch fell through! Returning DEFAULT location (Shunting Yard)");
                     return GetRavineLocation(RavineLocation.ShuntingYard);
+            }
+        }
+
+        public static Location GetSunderedPassLocation(SunderedPassLocation location)
+        {
+            switch (location)
+            {
+                case SunderedPassLocation.FinalRefuge:
+                    return new Location("Final Refuge", Region.MountainPassRegion, -337.6f, 599.9f, -998.6f, 166.6f, 12.9f);
+                case SunderedPassLocation.LastLonelyHouse:
+                    return new Location("Last Lonely House", Region.MountainPassRegion, 495.6f, 100.4f, 659.6f, 175.1f, -15.8f);
+                case SunderedPassLocation.LottesRest:
+                    return new Location("Lotte's Rest", Region.MountainPassRegion, 204.0f, 198.5f, 761.8f, 158.2f, 4.7f);
+                case SunderedPassLocation.WeatherStation:
+                    return new Location("Weather Station", Region.MountainPassRegion, 526.1f, 598.4f, -621.8f, 55.8f, 4.2f);
+                case SunderedPassLocation.Random:
+                    Location randomLocation = GetSunderedPassLocation((SunderedPassLocation)UnityEngine.Random.Range(0, Enum.GetNames(typeof(SunderedPassLocation)).Length - 1));
+                    MelonLogger.Msg("GetLocation for " + randomLocation.region.ToString() + " returned " + randomLocation.name + " as Random Location");
+                    return randomLocation;
+                default:
+                    MelonLogger.Msg("ERROR: GetSunderedPassLocation switch fell through! Returning DEFAULT location (Last Lonely House)");
+                    return GetSunderedPassLocation(SunderedPassLocation.LastLonelyHouse);
             }
         }
 
@@ -1021,6 +1083,22 @@ namespace ChooseStartingLocation
             }
         }
 
+        public static Location GetTransferPassLocation(TransferPassLocation location)
+        {
+            switch (location)
+            {
+                case TransferPassLocation.VacantDepot:
+                    return new Location("Vacant Depot", Region.HubRegion, 133.2f, 253.3f, 402.9f, 250.0f, 8.0f);
+                case TransferPassLocation.Random:
+                    Location randomLocation = GetTransferPassLocation((TransferPassLocation)UnityEngine.Random.Range(0, Enum.GetNames(typeof(TransferPassLocation)).Length - 1));
+                    MelonLogger.Msg("GetLocation for " + randomLocation.region.ToString() + " returned " + randomLocation.name + " as Random Location");
+                    return randomLocation;
+                default:
+                    MelonLogger.Msg("ERROR: GetWindingRiverLocation switch fell through! Returning DEFAULT location (Vacant Depot)");
+                    return GetTransferPassLocation(TransferPassLocation.VacantDepot);
+            }
+        }
+
         public static Location GetWindingRiverLocation(WindingRiverLocation location)
         {
             switch (location)
@@ -1042,6 +1120,26 @@ namespace ChooseStartingLocation
                 default:
                     MelonLogger.Msg("ERROR: GetWindingRiverLocation switch fell through! Returning DEFAULT location (Pleasant Valley Farmstead)");
                     return GetWindingRiverLocation(WindingRiverLocation.Cave);
+            }
+        }
+
+        public static Location GetZoneOfContaminationLocation(ZoneOfContaminationLocation location)
+        {
+            switch (location)
+            {
+                case ZoneOfContaminationLocation.IdleCamp:
+                    return new Location("Idle Camp", Region.MiningRegion, 433.0f, 237.6f, 197.7f, 318.3f, 10.2f);
+                case ZoneOfContaminationLocation.Mine:
+                    return new Location("Mine", Region.MiningRegion, -315.8f, 152.0f, -72.9f, 258.0f, 2.1f);
+                case ZoneOfContaminationLocation.Trailer:
+                    return new Location("Trailer", Region.MiningRegion, -341.7f, 221.6f, -449.2f, 164.5f, -4.1f);
+                case ZoneOfContaminationLocation.Random:
+                    Location randomLocation = GetZoneOfContaminationLocation((ZoneOfContaminationLocation)UnityEngine.Random.Range(0, Enum.GetNames(typeof(ZoneOfContaminationLocation)).Length - 1));
+                    MelonLogger.Msg("GetLocation for " + randomLocation.region.ToString() + " returned " + randomLocation.name + " as Random Location");
+                    return randomLocation;
+                default:
+                    MelonLogger.Msg("ERROR: GetWindingRiverLocation switch fell through! Returning DEFAULT location (Idle Camp)");
+                    return GetZoneOfContaminationLocation(ZoneOfContaminationLocation.IdleCamp);
             }
         }
     }

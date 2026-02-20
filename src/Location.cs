@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
-using MelonLoader;
+﻿using UnityEngine;
 
 namespace ChooseStartingLocation
 {
     public class Location
     {
+        internal readonly string spawnPointName;
         public string name;
         public string scene;
         public Region region;
@@ -15,7 +13,8 @@ namespace ChooseStartingLocation
         public Vector3 position = Vector3.zero;
         public Quaternion rotation = Quaternion.identity;
 
-        public Location(){
+        public Location()
+        {
         }
         public Location(string name, string scene, Region region, bool indoors, bool teleport)
         {
