@@ -1,4 +1,6 @@
 # Choose Starting Location
+All credit goes to [Cass](https://github.com/GruffCassquatch) for creating this mod.
+
 Updated for TLD version v2.51
 
 Allows you to choose your starting location when starting a new Sandbox game. 
