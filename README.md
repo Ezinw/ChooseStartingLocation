@@ -1,10 +1,10 @@
 # Choose Starting Location
-FOR GAME VERSION 2.00 / 2.02 (**PRE TALES FROM THE FAR TERRITORY**)    
+Updated for TLD version v2.51
 Allows you to choose your starting location when starting a new Sandbox game. 
 The idea is to add more variety and to allow better roleplaying/storytelling options. 
-It is designed to work alongside my other mods [ChooseStartingGear](https://github.com/GruffCassquatch/ChooseStartingGear) and [ChooseStartingCondition](https://github.com/GruffCassquatch/ChooseStartingConditions) for a completely custom start.       
+This mod is designed to work alongside [ChooseStartingGear](https://github.com/moosemeat817/ChooseStartingGearRedux/releases) and [ChooseStartingCondition](https://github.com/Sm4rtBoyTom/ChooseStartingConditions/releases) for a completely custom start. These mods, and more, can also be found at [TLDMods.com](https://tldmods.com/)      
 
-* You can choose your location even on Interloper!
+* You can choose your location even on Interloper and Misery!
 * Includes ALL regions, not just the usual new game options
 * All regions and locations are also available as Random options
 
@@ -12,12 +12,13 @@ It is designed to work alongside my other mods [ChooseStartingGear](https://gith
 
 
 ## Requirements
-[MelonLoader](https://github.com/HerpDerpinstine/MelonLoader/releases/latest/download/MelonLoader.Installer.exe)
+[MelonLoader](https://melonwiki.xyz/#/)
+Enable Nightly Builds. Use v0.7.2-ci.2388 or newer.
 
-[ModSettings](https://github.com/zeobviouslyfakeacc/ModSettings/releases)
+[ModSettings](https://github.com/DigitalzombieTLD/ModSettings/)
 
 ## Installation:
-1. Download ```ChooseStartingLocation.dll``` from [releases](https://github.com/GruffCassquatch/ChooseStartingLocation/releases)
+1. Download ```ChooseStartingLocation.dll``` from [releases](https://github.com/Ezinw/ChooseStartingLocation/releases)
 2. Drop ```ChooseStartingLocation.dll``` into your Mods folder
 3. If you are updating from an older version, delete the ```ChooseStartingLocation.json``` from your Mods folder as old json's can cause errors if the mod's Settings have been changed
 
@@ -38,7 +39,7 @@ Delete ```ChooseStartingLocation.dll``` and ```ChooseStartingLocation.json``` fi
 		* The screenshot should be saved to your Desktop (by default), open it
 		* The 3rd line with 3 numbers in brackets are the coordinates; enter them in the same order as they appear (X, Y, Z)
 		* The 4th line with 2 numbers in brackets is the rotation (the direction the player is facing); enter these as they appear (X, Y)
-		* You can reach interesting locations using the ```fly``` console command with [DeveloperConsole](https://github.com/FINDarkside/TLD-Developer-Console), press ```space bar``` to land
+		* You can reach interesting locations using the ```fly``` console command with [DeveloperConsole](https://github.com/DigitalzombieTLD/TLD-Developer-Console/releases), press ```space bar``` to land
 	* ```Location List:``` You can choose from a list of Regions and Locations, or select Random
 		* Select a starting Region
 		* Select a starting Location from the list
@@ -52,11 +53,9 @@ Delete ```ChooseStartingLocation.dll``` and ```ChooseStartingLocation.json``` fi
 
 
 ## Feedback, Questions & Troubleshooting
-* I am active on [The Long Dark Modding](https://discord.gg/QvFE7VV4WZ) Discord server
-	* **General questions and feedback:** post in my channel #cass
-		* Please note that many indoor locations CANNOT be added as they do not have unique scene names. It is too much work to add and maintain these locations!
-		* I am open to adding more locations (within reason), contact me on Discord if you have a specific location you really want 
+* [The Long Dark Modding](https://discord.gg/QvFE7VV4WZ) Discord server
 	* **Troubleshooting:** 
-		* Post in my channel #cass or in #troubleshooting 
+	    * Post in [#troubleshooting](https://discord.com/channels/322211727192358914/468386891507695628)
 		* Or create an issue here on GitHub if you're not on Discord
+		* Please note that many indoor locations CANNOT be added as they do not have unique scene names. It is too much work to add and maintain these locations!
 		* While the mod is still in the testing phase, it will leave messages in your MelonLoader window. These are to help troubleshoot if something does not work as expected. You should not be worried about any messages unless they are RED.
