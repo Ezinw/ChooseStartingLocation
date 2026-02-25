@@ -16,7 +16,7 @@ This mod is designed to work alongside [ChooseStartingGear](https://github.com/m
 
 ## Requirements
 [MelonLoader](https://melonwiki.xyz/#/)
-Enable Nightly Builds. Use v0.7.2-ci.2388 or newer.
+Enable Nightly Builds. Use v0.7.2-ci.2394 or newer.
 
 [ModSettings](https://github.com/DigitalzombieTLD/ModSettings/)
 
