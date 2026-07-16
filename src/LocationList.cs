@@ -52,7 +52,7 @@ namespace ChooseStartingLocation
     }
     public enum ForlornMuskegLocation
     {
-        Bunkhouses, Cave, CaveBI, HatCreek, HighBlind, LowBlind, MarshRidge, MuskegOverlook, OldSpenceFamilyHomestead, PoachersCamp, ShortwaveTower, Waterfall, Random
+        Bunkhouses, Cave, CaveBI, HatCreek, HighBlind, LowBlind, MarshRidge, MuskegOverlook, OldSpenceFamilyHomestead, PoachersCamp, PrepperCache, ShortwaveTower, Waterfall, Random
     }
     public enum ForsakenAirfieldLocation
     {
@@ -74,13 +74,13 @@ namespace ChooseStartingLocation
     public enum MountainTownLocation
     {
         CaveClimbingArea, CaveDeep, CaveRadioTower, CaveHRV, CaveML, CrashedPlane, CrashedPrisonTransportBus, Graveyard, GreyMothersHouse, HermitsCabin, MiltonBasin, MiltonCreditUnion, MiltonHouse, MiltonPark, MiltonPostOffice,
-        OldSchoolhouse, OrcaGasStation, ParadiseMeadowsFarm, ParkOffice, PicnicArea, RadioTower, RockyRefuge, SideOfTheRoad, SpruceFallsBridge, StChristophersChurch, TheArch, TownOfMilton, Trailer, WoodLotNorth, WoodLotSouthEast,
+        OldSchoolhouse, OrcaGasStation, ParadiseMeadowsFarm, ParkOffice, PicnicArea, PrepperCache, RadioTower, RockyRefuge, SideOfTheRoad, SpruceFallsBridge, StChristophersChurch, TheArch, TownOfMilton, Trailer, WoodLotNorth, WoodLotSouthEast,
         WoodLotSouthWest, Random
     }
     public enum MysteryLakeLocation
     {
         AlansCave, CampOffice, CarterHydroDam, CaveMT, CaveUnnamed, Clearcut, DavesQuietClearing, DeadfallArea, Derailment, DestroyedLookout, ForestryLookout, FrozenCreek, HuntersBlindatAlansCave, IceFishingHuts, LakeCabin,
-        LakeCabinsSE, LakeCabinsSW, LakeOverlook, LoggingCamp, Lookout, MaxsLastStand, RailTunnel, RiverNorthernAccess, RiverSouthernAccess, MysteryLake, MysteryLakeWesternAccess, TrainBridge, TrainLoadingArea, TrappersCabin,
+        LakeCabinsSE, LakeCabinsSW, LakeOverlook, LoggingCamp, Lookout, MaxsLastStand, PrepperCache, RailTunnel, RiverNorthernAccess, RiverSouthernAccess, MysteryLake, MysteryLakeWesternAccess, TrainBridge, TrainLoadingArea, TrappersCabin,
         UnnamedPond, Random
     }
     public enum PleasantValleyLocation
@@ -589,6 +589,8 @@ namespace ChooseStartingLocation
                     return new Location("Old Spence Family Homestead", Region.MarshRegion, 471.5f, -123.4f, 60.2f, 183.0f, 2.5f);
                 case ForlornMuskegLocation.PoachersCamp:
                     return new Location("Poacher's Camp", Region.MarshRegion, 1111.6f, -128.3f, 975.8f, 106.9f, 1.2f);
+                case ForlornMuskegLocation.PrepperCache:
+                    return new Location("Prepper Cache", Region.MarshRegion, 591.4f, -83.1f, -105.5f, 77.8f, 20.7f);
                 case ForlornMuskegLocation.ShortwaveTower:
                     return new Location("Shortwave Tower", Region.MarshRegion, 703.1f, -17.3f, 1486.7f, 156.9f, 12.1f);
                 case ForlornMuskegLocation.Waterfall:
@@ -785,6 +787,8 @@ namespace ChooseStartingLocation
                     return new Location("Park Office", Region.MountainTownRegion, 963.7f, 306.0f, 1232.0f, 334.7f, 4.6f);
                 case MountainTownLocation.PicnicArea:
                     return new Location("Picnic Area", Region.MountainTownRegion, 926.4f, 315.7f, 1157.0f, 232.7f, -0.4f);
+                case MountainTownLocation.PrepperCache:
+                    return new Location("Prepper Cache", Region.MountainTownRegion, 1829.7f, 444.9f, 1769.7f, 323.3f, 27.6f);
                 case MountainTownLocation.RadioTower:
                     return new Location("Radio Tower", Region.MountainTownRegion, 1317.8f, 352.2f, 1602.0f, 291.4f, -70.4f);
                 case MountainTownLocation.RockyRefuge:
@@ -863,6 +867,8 @@ namespace ChooseStartingLocation
                     return new Location("Lookout", Region.LakeRegion, 29.6f, 146.8f, 1594.8f, 141.4f, 0.8f);
                 case MysteryLakeLocation.MaxsLastStand:
                     return new Location("Max's Last Stand", Region.LakeRegion, 319.2f, 12.4f, -36.9f, 142.5f, 1.8f);
+                case MysteryLakeLocation.PrepperCache:
+                    return new Location("Prepper Cache", Region.LakeRegion, 1029.0f, 92.6f, -54.8f, 7.8f, 25.3f);
                 case MysteryLakeLocation.RailTunnel:
                     return new Location("Rail Tunnel", Region.LakeRegion, 778.4f, 38.7f, -88.0f, 204.2f, -5.1f);
                 case MysteryLakeLocation.RiverNorthernAccess:
@@ -1106,9 +1112,9 @@ namespace ChooseStartingLocation
                 case WindingRiverLocation.Cave:
                     return new Location("Cave", Region.DamRiverTransitionZoneB, 357.0f, 40.1f, 625.7f, 112.2f, 19.0f);
                 case WindingRiverLocation.CavePV:
-                    return new Location("Cave to Pleasant Valley", "DamCaveTransitionZone", Region.DamRiverTransitionZoneB, true, true, -57.5f, 5.4f, 95.0f, 21.2f, 18.1f);
+                    return new Location("Cave to Pleasant Valley", "DamCaveTransitionZone", Region.RuralRegion, true, true, -57.5f, 5.4f, 95.0f, 21.2f, 18.1f);
                 case WindingRiverLocation.Dam:
-                    return new Location("Dam", "DamTransitionZone", Region.DamRiverTransitionZoneB, true, true, -11.4f, 1.8f, -8.7f, 66.0f, 1.2f);
+                    return new Location("Dam", "DamTransitionZone", Region.RuralRegion, true, true, -11.4f, 1.8f, -8.7f, 66.0f, 1.2f);
                 case WindingRiverLocation.Hilltop:
                     return new Location("Hilltop", Region.DamRiverTransitionZoneB, 450.4f, 75.1f, 456.1f, 146.2f, 4.7f);
                 case WindingRiverLocation.ShelteredSpot:

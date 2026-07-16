@@ -81,7 +81,7 @@ namespace ChooseStartingLocation
 
         [Section("Starting Location")]
         [Name("Choose Starting Location")]
-        [Choice("Bunkhouses", "Cave", "Cave to Bleak Inlet", "Hat Creek", "High Blind", "Low Blind", "Marsh Ridge", "Muskeg Overlook", "Old Spence Family Homestead", "Poacher's Camp", "Shortwave Tower", "Waterfall", "Random")]
+        [Choice("Bunkhouses", "Cave", "Cave to Bleak Inlet", "Hat Creek", "High Blind", "Low Blind", "Marsh Ridge", "Muskeg Overlook", "Old Spence Family Homestead", "Poacher's Camp", "Prepper Cache", "Shortwave Tower", "Waterfall", "Random")]
         public ForlornMuskegLocation forlornMuskegLocation = ForlornMuskegLocation.Bunkhouses;
 
         [Section("Starting Location")]
@@ -109,15 +109,15 @@ namespace ChooseStartingLocation
         [Section("Starting Location")]
         [Name("Choose Starting Location")]
         [Choice("Cave (Climbing Area)", "Cave (Deep)", "Cave (Near Radio Tower)", "Cave to Hushed River Valey", "Cave to Mystery Lake", "Crashed Plane", "Crashed Prison Transport Bus", "Graveyard", "Grey Mother's House", 
-            "Hermit's Cabin", "Milton Basin", "Milton Credit Union", "Milton House", "Milton Park", "Milton Post Office", "Old Schoolhouse", "Orca Gas Station", "Paradise Meadows Farm", "Park Office", "Picnic Area", "Radio Tower", 
+            "Hermit's Cabin", "Milton Basin", "Milton Credit Union", "Milton House", "Milton Park", "Milton Post Office", "Old Schoolhouse", "Orca Gas Station", "Paradise Meadows Farm", "Park Office", "Picnic Area", "Prepper Cache", "Radio Tower", 
             "Rocky Refuge", "Side of the Road", "Spruce Falls Bridge", "St. Christopher's Church", "The Arch", "Town of Milton", "Trailer", "Wood Lot (Northern)", "Wood Lot (South Eastern)", "Wood Lot (South Western)", "Random")]
         public MountainTownLocation mountainTownLocation = MountainTownLocation.CaveClimbingArea;
 
         [Section("Starting Location")]
         [Name("Choose Starting Location")]
         [Choice("Alan's Cave", "Camp Office", "Carter Hydro Dam", "Cave to Mountain Town", "Cave (Unnamed)", "Clearcut", "Dave's Quiet Clearing", "Deadfall Area", "Derailment", "Destroyed Lookout", "Forestry Lookout", 
-            "Frozen Creek", "Hunter's Blind at Alan's Cave", "Ice Fishing Huts", "Lake Cabin (Lone)", "Lake Cabins (South Eastern)", "Lake Cabins (South Western)", "Lake Overlook", "Logging Camp", "Lookout Spot", "Max's Last Stand", 
-            "Rail Tunnel", "River (Northern Access)", "River (Southern Access)", "Mystery Lake", "Mystery Lake (Western Access)", "Train Bridge", "Train Loading Area", "Trapper's Cabin", "Unnamed Pond", "Random")]
+            "Frozen Creek", "Hunter's Blind at Alan's Cave", "Ice Fishing Huts", "Lake Cabin (Lone)", "Lake Cabins (South Eastern)", "Lake Cabins (South Western)", "Lake Overlook", "Logging Camp", "Lookout Spot", "Max's Last Stand",
+            "Prepper Cache", "Rail Tunnel", "River (Northern Access)", "River (Southern Access)", "Mystery Lake", "Mystery Lake (Western Access)", "Train Bridge", "Train Loading Area", "Trapper's Cabin", "Unnamed Pond", "Random")]
         public MysteryLakeLocation mysteryLakeLocation = MysteryLakeLocation.AlansCave;
 
         [Section("Starting Location")]
